@@ -102,7 +102,17 @@ def plusOne(digits):
         digits[i] = 0
     return [1] + digits
 
-    
+'''Given an integer array nums, move all 0's to the end of it while maintaining 
+    the relative order of the non-zero elements.'''
+def moveZeroes(nums):
+    z = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[z], nums[i]  = nums[i], nums[z]  
+            z += 1
+
+            
+
 if __name__ == '__main__':
     # nums = [0,0,1,1,1,2,2,3,3,4]
     # print(rem_dup(nums))
@@ -127,6 +137,10 @@ if __name__ == '__main__':
     # nums2 = [9,4,9,8,4]
     # print(intersect(nums1,nums2))
 
-    digits = [4,3,2,1]
-    digits = [4,3,2,9]
-    print(plusOne(digits))
+    # digits = [4,3,2,1]
+    # digits = [4,3,2,9]
+    # print(plusOne(digits))
+    nums = [0,1,0,3,12]
+    nums = [1]
+    moveZeroes(nums)
+    print(nums)
