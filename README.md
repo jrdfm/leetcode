@@ -10,7 +10,7 @@ leetcode practice
 - [x]  Intersection of Two Arrays II
 - [x]  Plus One
 - [x]  Move Zeroes
-- []  Two Sum
+- [x]  Two Sum
 - []  Valid Sudoku
 - []  Rotate Image
 

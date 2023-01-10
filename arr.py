@@ -111,7 +111,17 @@ def moveZeroes(nums):
             nums[z], nums[i]  = nums[i], nums[z]  
             z += 1
 
-            
+'''Given an array of integers nums and an integer target, return indices of the
+   two numbers such that they add up to target.'''
+def twoSum(nums, target):
+    d = {}
+    for i,n in enumerate(nums):
+        k = target - n
+        if k in d:
+            return [d[k],i]
+        else:
+            d[n] = i
+
 
 if __name__ == '__main__':
     # nums = [0,0,1,1,1,2,2,3,3,4]
@@ -140,7 +150,12 @@ if __name__ == '__main__':
     # digits = [4,3,2,1]
     # digits = [4,3,2,9]
     # print(plusOne(digits))
-    nums = [0,1,0,3,12]
-    nums = [1]
-    moveZeroes(nums)
-    print(nums)
+    # nums = [0,1,0,3,12]
+    # nums = [1]
+    # moveZeroes(nums)
+    # print(nums)
+
+    nums = [3,2,4]
+    nums = [3,3]
+    target = 6
+    twoSum(nums,target)
