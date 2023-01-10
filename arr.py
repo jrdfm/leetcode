@@ -123,6 +123,7 @@ def twoSum(nums, target):
             d[n] = i
 
 
+
 if __name__ == '__main__':
     # nums = [0,0,1,1,1,2,2,3,3,4]
     # print(rem_dup(nums))
