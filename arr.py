@@ -31,7 +31,6 @@ def rotate(nums, k):
         nums.insert(0, nums.pop())
 
 def rotate(nums, k):
-
     k %= len(nums)
     nums[:]= nums[-k:] + nums[:k]
 
@@ -102,7 +101,7 @@ def plusOne(digits):
         digits[i] = 0
     return [1] + digits
 
-'''Given an integer array nums, move all 0's to the end of it while maintaining 
+'''Given an integer array nums, move all 0'matrix to the end of it while maintaining 
     the relative order of the non-zero elements.'''
 def moveZeroes(nums):
     z = 0
@@ -153,23 +152,16 @@ def isValidSudoku(board):
 '''given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise)'''
 
 def rotate(matrix):
-    i = len(matrix) - 1
-    j = 0
-    while j < i:
-        matrix[i], matrix[j] = matrix[j], matrix[i]
-        j+=1
-        i-=1 
+    # reverse
+    for i in range(len(matrix)//2):
+        matrix[i], matrix[~i] = matrix[~i], matrix[i]
+    # transpose
     for i in range(len(matrix)):
         for j in range(i):
             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j] 
         
             
-        
-
-        
-                        
-                    
-                
+     
 
 if __name__ == '__main__':
     # nums = [0,0,1,1,1,2,2,3,3,4]

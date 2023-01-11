@@ -14,3 +14,13 @@ leetcode practice
 - [x]  Valid Sudoku
 - [x]  Rotate Image
 
+### [Strings](https://github.com/jrdfm/leetcode/blob/d33bc60c8d5276e5955d0a226e5610226427b143/arr.py)
+
+- [x]  Reverse String
+- [x]  Reverse Integer
+- []  First Unique Character in a String
+- []  Valid Anagram
+- []  Valid Palindrome
+- []  String to Integer (atoi)
+- []  Implement strStr()
+- []  Longest Common Prefix
