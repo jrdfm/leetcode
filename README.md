@@ -14,7 +14,7 @@ leetcode practice
 - [x]  Valid Sudoku
 - [x]  Rotate Image
 
-### [Strings](https://github.com/jrdfm/leetcode/blob/d33bc60c8d5276e5955d0a226e5610226427b143/arr.py)
+### [Strings](https://github.com/jrdfm/leetcode/blob/ebeef5bb427ba659367ff10612436c36ef29115e/strings.py)
 
 - [x]  Reverse String
 - [x]  Reverse Integer
