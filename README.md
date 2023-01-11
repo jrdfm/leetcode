@@ -11,6 +11,6 @@ leetcode practice
 - [x]  Plus One
 - [x]  Move Zeroes
 - [x]  Two Sum
-- []  Valid Sudoku
-- []  Rotate Image
+- [x]  Valid Sudoku
+- [x]  Rotate Image
 
