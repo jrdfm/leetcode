@@ -1,8 +1,9 @@
-#/usr/local/bin/python 
+#!/usr/local/bin/python 
 
 '''function that reverses a string. The input string is given as an array of characters s'''
 def reverseString(s):
-    for i in range(len(s)//2): s[i], s[-i-1] = s[-i-1], s[i]
+    for i in range(len(s)//2): 
+        s[i], s[-i-1] = s[-i-1], s[i]
 
 # Better, using bitwise not ~x = -x - 1
 def reverseString(s):
@@ -38,7 +39,20 @@ def firstUniqChar(s):
     idx = [s.index(i) for i in set(s) if s.count(i) == 1]
     print(set(s))
     print(idx)
-    return min(idx) if len(idx) > 0 else -1    
+    return min(idx) if len(idx) > 0 else -1  
+
+'''Given two strings s and t, return true if t is an anagram of s, and false otherwise.'''
+
+def isAnagram(s, t):
+    sd, td = {}, {}
+    for i in s:
+        sd[i] = sd.get(i, 0) + 1
+    for i in t:
+        td[i] = td.get(i, 0) + 1
+    return sd == td
+
+def isAnagram(s, t):
+    return sorted(s) == sorted(t)
 
 if __name__ == '__main__':
     # s = list("TestString")
@@ -46,5 +60,9 @@ if __name__ == '__main__':
     # print(s)
 
     # s = "loveleetcode"
-    s = "leetcode"
-    print(firstUniqChar(s))
+    # s = "leetcode"
+    # print(firstUniqChar(s))
+    s = "anagram"
+    t = "nagaram"
+    s, t = "aacc", "ccac"
+    print(isAnagram(s,t))

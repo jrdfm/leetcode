@@ -19,7 +19,7 @@ leetcode practice
 - [x]  Reverse String
 - [x]  Reverse Integer
 - [x]  First Unique Character in a String
-- []  Valid Anagram
+- [x]  Valid Anagram
 - []  Valid Palindrome
 - []  String to Integer (atoi)
 - []  Implement strStr()
