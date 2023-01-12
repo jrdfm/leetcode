@@ -22,5 +22,5 @@ leetcode practice
 - [x]  Valid Anagram
 - [x]  Valid Palindrome
 - [x]  String to Integer (atoi)
-- []  Implement strStr()
+- [x]  Implement strStr()
 - []  Longest Common Prefix
