@@ -63,27 +63,10 @@ def isPalindrome(s):
 '''Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer'''
 
 def myAtoi(s):
-    ss = s.split()[0]
-    if ss.isalpha() :
-        return 0
-    # ss = ''.join(i for i in ss if i.isalnum() or i in ['-','+'])
-    # print(ss)
-    ss = ''.join(i for i in s if i.isnumeric() or i in ['-','+'])
-    d = int(ss)
-    if d > 2**31 + 1:
-        d = 2**31 + 1
-    if d < -2**31:
-        d = -2**31 
-    return d
-
-
-def myAtoi(s):
     INT_MAX =  2147483647
     INT_MIN = -2147483648
     result = 0
     sign = 1
-    if not s:
-        return result
     i = 0
     while i < len(s) and s[i].isspace():
         i += 1
@@ -97,9 +80,18 @@ def myAtoi(s):
         if result > (INT_MAX - int(s[i])) / 10:
             return INT_MAX if sign > 0 else INT_MIN
         result = result * 10 + int(s[i])
-        print(result)
         i += 1
     return sign * result
+
+'''Given two strings needle and haystack, return the index of the first occurrence 
+    of needle in haystack, or -1 if needle is not part of haystack.'''
+
+def strStr(haystack, needle):
+    ln = len(needle)
+    for i in range(len(haystack) - ln + 1):
+        if haystack[i:i+ln] == needle:
+            return i
+    return -1
 
 if __name__ == '__main__':
     # s = list("TestString")
@@ -116,9 +108,20 @@ if __name__ == '__main__':
     # s = "A man, a plan, a canal: Panama"
     # s = "0P"
     # print(isPalindrome(s))
-    s = "4193 with words"
-    s = "   -42"
-    s = ".words and 987"
-    s = "-91283472332" 
-    s = "3.14159"
-    print(myAtoi(s)) 
+    # s = "4193 with words"
+    # s = "   -42"
+    # s = ".words and 987"
+    # s = "-91283472332" 
+    # s = "3.14159"
+    # print(myAtoi(s)) 
+    haystack = "sadbutsad"
+    needle = "sad"
+    # haystack = "leetcode"
+    # needle = "leeto"
+    # haystack = "l"
+    # needle = "l"
+    haystack = "mississippi"
+    needle = "issip"
+    
+
+    print(strStr(haystack, needle))
