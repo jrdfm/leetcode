@@ -14,12 +14,12 @@ def reverseString(s):
    value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.'''
 
 def reverse(x):
-    d = sum(d * 10 ** i for i,d in enumerate([int(i) if x > 0 else -int(i) for i in str(abs(x)) ]))
+    d = sum(d * 10 ** i for i,d in enumerate([int(i) if x > 0 else -int(i) for i in s(abs(x)) ]))
     return d if d >= -2**31 and d <= 2 ** 31 - 1 else 0
 
 # Way better
 def reverse(x):
-    d = [-1,1][x > 0] * int(str(abs(x))[::-1])
+    d = [-1,1][x > 0] * int(s(abs(x))[::-1])
     return d if d >= -2**31 and d <= 2 ** 31 - 1 else 0
 
 '''Given a string s, find the first non-repeating character in it and return its index. 
@@ -58,9 +58,48 @@ def isAnagram(s, t):
 '''Valid Palindrome'''
 def isPalindrome(s):
     ss = ''.join(i for i in s if i.isalnum()).lower()
-    print(ss)
     return ss == ss[::-1]
 
+'''Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer'''
+
+def myAtoi(s):
+    ss = s.split()[0]
+    if ss.isalpha() :
+        return 0
+    # ss = ''.join(i for i in ss if i.isalnum() or i in ['-','+'])
+    # print(ss)
+    ss = ''.join(i for i in s if i.isnumeric() or i in ['-','+'])
+    d = int(ss)
+    if d > 2**31 + 1:
+        d = 2**31 + 1
+    if d < -2**31:
+        d = -2**31 
+    return d
+
+
+def myAtoi(s):
+    INT_MAX =  2147483647
+    INT_MIN = -2147483648
+    result = 0
+    sign = 1
+    if not s:
+        return result
+    i = 0
+    while i < len(s) and s[i].isspace():
+        i += 1
+    if len(s) == i:
+        return result
+    if s[i] == "+" or s[i] == "-": 
+        sign = [-1,1][s[i] == "+"]
+        i += 1
+
+    while i < len(s) and '0' <= s[i] <= '9':
+        if result > (INT_MAX - int(s[i])) / 10:
+            return INT_MAX if sign > 0 else INT_MIN
+        result = result * 10 + int(s[i])
+        print(result)
+        i += 1
+    return sign * result
 
 if __name__ == '__main__':
     # s = list("TestString")
@@ -74,6 +113,12 @@ if __name__ == '__main__':
     # t = "nagaram"
     # s, t = "aacc", "ccac"
     # print(isAnagram(s,t))
-    s = "A man, a plan, a canal: Panama"
-    s = "0P"
-    print(isPalindrome(s))
+    # s = "A man, a plan, a canal: Panama"
+    # s = "0P"
+    # print(isPalindrome(s))
+    s = "4193 with words"
+    s = "   -42"
+    s = ".words and 987"
+    s = "-91283472332" 
+    s = "3.14159"
+    print(myAtoi(s)) 

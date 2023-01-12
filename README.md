@@ -21,6 +21,6 @@ leetcode practice
 - [x]  First Unique Character in a String
 - [x]  Valid Anagram
 - [x]  Valid Palindrome
-- []  String to Integer (atoi)
+- [x]  String to Integer (atoi)
 - []  Implement strStr()
 - []  Longest Common Prefix
