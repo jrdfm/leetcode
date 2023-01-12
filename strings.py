@@ -93,6 +93,20 @@ def strStr(haystack, needle):
             return i
     return -1
 
+'''Write a function to find the longest common prefix string amongst an array of strings.
+   If there is no common prefix, return an empty string ""'''
+
+def longestCommonPrefix(strs):
+    prefix = ""
+    for ch in zip(*strs):
+        print(ch)
+        if len(set(ch)) == 1:
+            prefix += ch[0]
+        else:
+            return prefix
+    return prefix
+
+            
 if __name__ == '__main__':
     # s = list("TestString")
     # reverseString(s)
@@ -114,14 +128,16 @@ if __name__ == '__main__':
     # s = "-91283472332" 
     # s = "3.14159"
     # print(myAtoi(s)) 
-    haystack = "sadbutsad"
-    needle = "sad"
+    # haystack = "sadbutsad"
+    # needle = "sad"
     # haystack = "leetcode"
     # needle = "leeto"
     # haystack = "l"
     # needle = "l"
-    haystack = "mississippi"
-    needle = "issip"
+    # haystack = "mississippi"
+    # needle = "issip"
     
 
-    print(strStr(haystack, needle))
+    # print(strStr(haystack, needle))
+
+    strs = ["flower","flow","flight"]
