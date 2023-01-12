@@ -42,7 +42,6 @@ def firstUniqChar(s):
     return min(idx) if len(idx) > 0 else -1  
 
 '''Given two strings s and t, return true if t is an anagram of s, and false otherwise.'''
-
 def isAnagram(s, t):
     sd, td = {}, {}
     for i in s:
@@ -51,8 +50,17 @@ def isAnagram(s, t):
         td[i] = td.get(i, 0) + 1
     return sd == td
 
+# Better?
 def isAnagram(s, t):
     return sorted(s) == sorted(t)
+
+
+'''Valid Palindrome'''
+def isPalindrome(s):
+    ss = ''.join(i for i in s if i.isalnum()).lower()
+    print(ss)
+    return ss == ss[::-1]
+
 
 if __name__ == '__main__':
     # s = list("TestString")
@@ -62,7 +70,10 @@ if __name__ == '__main__':
     # s = "loveleetcode"
     # s = "leetcode"
     # print(firstUniqChar(s))
-    s = "anagram"
-    t = "nagaram"
-    s, t = "aacc", "ccac"
-    print(isAnagram(s,t))
+    # s = "anagram"
+    # t = "nagaram"
+    # s, t = "aacc", "ccac"
+    # print(isAnagram(s,t))
+    s = "A man, a plan, a canal: Panama"
+    s = "0P"
+    print(isPalindrome(s))

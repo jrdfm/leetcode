@@ -20,7 +20,7 @@ leetcode practice
 - [x]  Reverse Integer
 - [x]  First Unique Character in a String
 - [x]  Valid Anagram
-- []  Valid Palindrome
+- [x]  Valid Palindrome
 - []  String to Integer (atoi)
 - []  Implement strStr()
 - []  Longest Common Prefix
