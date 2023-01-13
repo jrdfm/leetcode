@@ -179,6 +179,25 @@ def isPalindrome(head):
         ls.append(cur.val)
     return ls == ls[::-1]
 
+
+'''Given head, the head of a linked list, determine if the linked list has a cycle in it.'''
+def hasCycle(head):
+    d = {}
+    cur = head
+    if not cur:
+        return False
+    if cur.next == None:
+        return False
+    while cur.next:
+        if cur in d:
+            return True
+        else:
+            d[cur] = cur.val
+        cur = cur.next
+    return False if cur not in d else True
+
+
+
 if __name__ == '__main__':
     from llist import *
 
@@ -221,7 +240,11 @@ if __name__ == '__main__':
     # print_list(head)
 
     head = [1,2,2,1]
+    head = [3,2,0,-4]
+    head = [1,2]
+    # head = [1]
     lls = LinkedList()
     for i in head[::-1]:
         lls.push(i)
-    print(isPalindrome(lls.head))
+    # print(isPalindrome(lls.head))
+    print(hasCycle(lls.head))
