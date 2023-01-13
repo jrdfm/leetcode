@@ -21,7 +21,7 @@ def deleteNode(node):
     node.val = nxt.val
     del(nxt)
 
-
+'''Given the head of a linked list, remove the nth node from the end of the list and return its head.'''
 def removeNthFromEnd(head, n):
     cur = head
     ls = []
@@ -71,8 +71,8 @@ def removeNthFromEnd(head, n):
         del(slow_ptr) 
   
     return head 
-'''Given the head of a singly linked list, reverse the list, and return the reversed list'''
 
+'''Given the head of a singly linked list, reverse the list, and return the reversed list'''
 def reverseList(head):
     cur = head
     prev = None
@@ -83,23 +83,128 @@ def reverseList(head):
         cur = nxt
     return prev 
 
-def print_list(head):
-    # ls = [] 
-    temp = head 
-    while(temp): 
-        print (temp.val) 
-        temp = temp.next 
+
+
+'''Merge the two lists in a one sorted list.
+   Return the head of the merged linked list.'''
+# kinda works sometimes
+def mergeTwoLists(list1, list2):
+    if not list1 and not list2:
+        return None
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+    cur1, cur2 = list1, list2
+    tmp1, tmp2 = cur1.next, cur2.next
+    prev = None
+    if cur1.val <= cur2.val:
+        head = cur1
+        cur1.next = cur2
+        prev = cur2
+    else:
+        head = cur2
+        cur2.next = cur1
+        prev = cur1
+    cur1, cur2 = tmp1, tmp2 
+
+    while cur1 and cur2 and cur1.next and cur2.next:
+        tmp1, tmp2 = cur1.next, cur2.next
+        if cur1.val <= cur2.val:
+            prev.next = cur1
+            cur1.next = cur2
+            prev = cur2
+        else:
+            prev.next = cur2
+            cur2.next = cur1
+            prev = cur1
+        cur1, cur2 = tmp1, tmp2
+
+    if cur1 and cur1.next:
+        tmp1 = cur1.next
+        if cur1.val <= cur2.val:
+            prev.next = cur1
+            cur1.next = cur2
+            cur2.next = tmp1
+        else:
+            prev.next = cur2
+            cur2.next = cur1 
+            cur1.next = tmp1
+
+    elif cur2 and cur2.next:
+        tmp2 = cur2.next
+        if cur2.val <= cur1.val:
+            prev.next = cur2
+            cur2.next = cur2
+            cur2.next = tmp2
+        else:
+            prev.next = cur1
+            cur1.next = cur2 
+            cur2.next = tmp2
+    else:
+        if cur1 and cur1.val <= cur2.val:
+            prev.next = cur1
+            cur1.next = cur2
+        elif cur2:
+            prev.next = cur2
+            cur2.next = cur1     
+           
+    return head
+
+# recursion + chatGpt saves the day
+# def mergeTwoLists(list1, list2):
+#     temp = None
+#     if list1 is None:
+#         return list2
+#     elif list2 is None:
+#         return list1
+        
+#     if list1.val <= list2.val:
+#         temp = list1
+#         temp.next = mergeTwoLists(list1.next, list2)
+#     else:
+#         temp = list2
+#         temp.next = mergeTwoLists(list1, list2.next)
+        
+#     return temp
+
 if __name__ == '__main__':
     from llist import *
+
+    def print_list(head):
+        ls = [] 
+        temp = head 
+        while(temp): 
+            ls.append(temp.val)
+            # print (temp.val) 
+            temp = temp.next 
+        print(ls)  
     head = []
     head = [1,2,3,4,5]
     # head = [1]
     # head = [1,2]
-    llist = LinkedList() 
-    for i in head[::-1]:
-        llist.push(i)
-    print_list(llist.head)
+    # llist = LinkedList() 
+    # for i in head[::-1]:
+    #     llist.push(i)
+    # print_list(llist.head)
     # print(llist.head.val)
     # print(f'cur {cur.val}, prev {prev.val}, next {nxt.val}')
     
-    print_list(reverseList(llist.head))
+    # print_list(reverseList(llist.head))
+    # list1 = [1,2,4]
+    # list2 = [1,3,4]
+    # list1 = []
+    # list2 = []
+    # list1 = []
+    # list2 = [0]
+    list1 = [2]
+    list2 = [1]
+    llist1 = LinkedList() 
+    llist2 = LinkedList() 
+    for i in list1[::-1]:
+        llist1.push(i)
+
+    for i in list2[::-1]:
+        llist2.push(i)
+    head = mergeTwoLists(llist1.head, llist2.head)
+    print_list(head)
