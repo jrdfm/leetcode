@@ -24,3 +24,12 @@ leetcode practice
 - [x]  String to Integer (atoi)
 - [x]  Implement strStr()
 - [x]  Longest Common Prefix
+
+### [Linked List](https://github.com/jrdfm/leetcode/blob/ebeef5bb427ba659367ff10612436c36ef29115e/linked_list.py)
+
+- [x] Delete Node in a Linked List
+- [x] Remove Nth Node From End of List
+- [x] Reverse Linked List
+- [] Merge Two Sorted Lists
+- [] Palindrome Linked List
+- [] Linked List Cycle
