@@ -152,21 +152,32 @@ def mergeTwoLists(list1, list2):
     return head
 
 # recursion + chatGpt saves the day
-# def mergeTwoLists(list1, list2):
-#     temp = None
-#     if list1 is None:
-#         return list2
-#     elif list2 is None:
-#         return list1
+def mergeTwoLists(list1, list2):
+    temp = None
+    if list1 is None:
+        return list2
+    elif list2 is None:
+        return list1
         
-#     if list1.val <= list2.val:
-#         temp = list1
-#         temp.next = mergeTwoLists(list1.next, list2)
-#     else:
-#         temp = list2
-#         temp.next = mergeTwoLists(list1, list2.next)
+    if list1.val <= list2.val:
+        temp = list1
+        temp.next = mergeTwoLists(list1.next, list2)
+    else:
+        temp = list2
+        temp.next = mergeTwoLists(list1, list2.next)
         
-#     return temp
+    return temp
+
+'''Given the head of a singly linked list, return true if it is a palindrome or false otherwise.'''
+def isPalindrome(head):
+    ls = []
+    cur = head
+    while cur and cur.next:
+        ls.append(cur.val)
+        cur = cur.next
+    if cur != head:
+        ls.append(cur.val)
+    return ls == ls[::-1]
 
 if __name__ == '__main__':
     from llist import *
@@ -179,8 +190,8 @@ if __name__ == '__main__':
             # print (temp.val) 
             temp = temp.next 
         print(ls)  
-    head = []
-    head = [1,2,3,4,5]
+    # head = []
+    # head = [1,2,3,4,5]
     # head = [1]
     # head = [1,2]
     # llist = LinkedList() 
@@ -197,14 +208,20 @@ if __name__ == '__main__':
     # list2 = []
     # list1 = []
     # list2 = [0]
-    list1 = [2]
-    list2 = [1]
-    llist1 = LinkedList() 
-    llist2 = LinkedList() 
-    for i in list1[::-1]:
-        llist1.push(i)
+    # list1 = [2]
+    # list2 = [1]
+    # llist1 = LinkedList() 
+    # llist2 = LinkedList() 
+    # for i in list1[::-1]:
+    #     llist1.push(i)
 
-    for i in list2[::-1]:
-        llist2.push(i)
-    head = mergeTwoLists(llist1.head, llist2.head)
-    print_list(head)
+    # for i in list2[::-1]:
+    #     llist2.push(i)
+    # head = mergeTwoLists(llist1.head, llist2.head)
+    # print_list(head)
+
+    head = [1,2,2,1]
+    lls = LinkedList()
+    for i in head[::-1]:
+        lls.push(i)
+    print(isPalindrome(lls.head))

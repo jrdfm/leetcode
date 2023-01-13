@@ -31,5 +31,5 @@ leetcode practice
 - [x] Remove Nth Node From End of List
 - [x] Reverse Linked List
 - [x] Merge Two Sorted Lists
-- [] Palindrome Linked List
+- [x] Palindrome Linked List
 - [] Linked List Cycle
