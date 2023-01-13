@@ -33,3 +33,11 @@ leetcode practice
 - [x] Merge Two Sorted Lists
 - [x] Palindrome Linked List
 - [x] Linked List Cycle
+
+### [Trees]()
+
+- [] Maximum Depth of Binary Tree
+- [] Validate Binary Search Tree
+- [] Symmetric Tree
+- [] Binary Tree Level Order Traversal
+- [] Convert Sorted Array to Binary Search Tree
