@@ -37,7 +37,7 @@ leetcode practice
 ### [Trees](https://github.com/jrdfm/leetcode/blob/994233a1636d5252b914b0cc0e05355903a58084/trees.py)
 
 - [x] Maximum Depth of Binary Tree
-- [] Validate Binary Search Tree
+- [x] Validate Binary Search Tree
 - [] Symmetric Tree
 - [] Binary Tree Level Order Traversal
 - [] Convert Sorted Array to Binary Search Tree

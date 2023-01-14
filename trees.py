@@ -21,8 +21,40 @@ def maxDepth(root):
         right = 1
     return max(left, right)
 
+'''Given the root of a binary tree, determine if it is a valid binary search tree (BST).'''
+def isValidBST(root):
+    if not root:
+        return False
+    if root.left:
+        left = (root.val > root.left.val) and isValidBST(root.left)
+    else:
+        left = True
+    if root.right:
+        right = (root.val < root.right.val) and isValidBST(root.right) 
+    else:
+        right = True
+    return left and right  
 
+def isValidBST(root):
+    def valid(node, low, high):
+        if not node: return True
+        if node.val > low and node.val < high:
+            return valid(node.left,low,node.val) and\
+                   valid(node.right,node.val,high)
+        return False
+    return valid(root,-2 ** 31 - 1 ,2 ** 31)
+            
+# def isValidBST(root):
+    
+#     def validate(node, lower, upper):
+#         if not node:  return True    # empty node/Tree considered BST
 
+#         # compare the node range is still valid: between low and high
+#         if node.val > lower and node.val < upper:
+#             return validate(node.left, lower, node.val) and \
+#                     validate(node.right, node.val, upper)
+#         return False
+#     return validate(root, float("-inf"), float("+inf")) # <--- miss here!
 if __name__ == '__main__':
     from tree_test import *
     random.seed(42)
@@ -40,6 +72,22 @@ if __name__ == '__main__':
     # root = to_binary_tree([3,9,20,None,None,15,7])
     # viz_tree_gpz(root)
     # print(maxDepth(root))
-    root = to_binary_tree([])
+    # root = to_binary_tree([])
+    # viz_tree_gpz(root)
+    # print(maxDepth(root))
+
+    # root = to_binary_tree([2,1,3])
+    # viz_tree_gpz(root)
+    # print(isValidBST(root))
+
+    # root = to_binary_tree([5,1,4,None,None,3,6])
+    # viz_tree_gpz(root)
+    # print(isValidBST(root))
+
+    # root = to_binary_tree([5,4,6,None,None,3,7])
+    # viz_tree_gpz(root)
+    # print(isValidBST(root))
+
+    root = to_binary_tree([2147483647])
     viz_tree_gpz(root)
-    print(maxDepth(root))
+    print(isValidBST(root))
