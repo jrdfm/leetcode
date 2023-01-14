@@ -76,7 +76,7 @@ def level_order_traversal(root):
   if root is None: 
     return True
   q = [] 
-  l = [[root.val]]
+  l = [[root]]
   q.append(root) 
   while (len(q)) > 0: 
     ls = []
@@ -117,6 +117,7 @@ def viz_tree_gpz(root):
       dot.edge(str(node.id), str(node.right.id)) 
 
 #   print(dot.source)
+
   dot.render('test', view=True) 
 
 

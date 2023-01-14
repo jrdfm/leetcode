@@ -1,10 +1,22 @@
 #!/usr/local/bin/python 
+class Tree:
+    def __init__(self):
+        pass
+    def sortedArrayToBST(self, nums):
+        l = len(nums)
+        if not l: return None
+        m = l//2
+        
+        return self.TreeNode(nums[m],self.sortedArrayToBST(nums[:m]),self.sortedArrayToBST(nums[m + 1:]))   
+        
+    class TreeNode:
+        def __init__(self, val=0, left=None, right=None):
+            self.val = val
+            self.left = left
+            self.right = right
+            self.id = random.random()
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+
 
 
 '''Given the root of a binary tree, return its maximum depth.'''
@@ -88,6 +100,16 @@ def levelOrder(root):
         level = [ch for node in level for ch in (node.left, node.right) if ch]
     return res
 
+'''Given an integer array nums where the elements are sorted in ascending order,
+   convert it to a height-balanced binary search tree.'''
+def sortedArrayToBST(nums):
+    l = len(nums)
+    if not l: return None
+    m = l//2
+    return TreeNode(nums[m],sortedArrayToBST(nums[:m]),sortedArrayToBST(nums[m + 1:]))
+        
+
+
 if __name__ == '__main__':
     from tree_test import *
     import time
@@ -137,9 +159,18 @@ if __name__ == '__main__':
     # isSymmetricR(root)
     # end = time.time()
     # print(f'rec {end - start}')
-    root = to_binary_tree([3,2,9,20,None,None,15,7])
-    root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
+    # root = to_binary_tree([3,2,9,20,None,None,15,7])
+    # root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
     # root = to_binary_tree([1,2,3,4,None,None,5])
-    viz_tree_gpz(root)
-    print(levelOrder(root))
+    # viz_tree_gpz(root)
     # print(levelOrder(root))
+    # print(levelOrder(root))
+    tree = Tree()
+
+    root = tree.sortedArrayToBST([-10,-3,0,5,9])
+    viz_tree_gpz(root)
+
+
+    
+    # root = sortedArrayToBST([1,3])
+    # viz_tree_gpz(root)
