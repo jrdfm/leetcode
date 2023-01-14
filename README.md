@@ -34,9 +34,9 @@ leetcode practice
 - [x] Palindrome Linked List
 - [x] Linked List Cycle
 
-### [Trees]()
+### [Trees](https://github.com/jrdfm/leetcode/blob/994233a1636d5252b914b0cc0e05355903a58084/trees.py)
 
-- [] Maximum Depth of Binary Tree
+- [x] Maximum Depth of Binary Tree
 - [] Validate Binary Search Tree
 - [] Symmetric Tree
 - [] Binary Tree Level Order Traversal
