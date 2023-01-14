@@ -34,7 +34,7 @@ def isValidBST(root):
     else:
         right = True
     return left and right  
-
+# works
 def isValidBST(root):
     def valid(node, low, high):
         if not node: return True
@@ -43,20 +43,45 @@ def isValidBST(root):
                    valid(node.right,node.val,high)
         return False
     return valid(root,-2 ** 31 - 1 ,2 ** 31)
-            
-# def isValidBST(root):
-    
-#     def validate(node, lower, upper):
-#         if not node:  return True    # empty node/Tree considered BST
 
-#         # compare the node range is still valid: between low and high
-#         if node.val > lower and node.val < upper:
-#             return validate(node.left, lower, node.val) and \
-#                     validate(node.right, node.val, upper)
-#         return False
-#     return validate(root, float("-inf"), float("+inf")) # <--- miss here!
+'''Given the root of a binary tree, check whether it is a mirror of itself 
+   (i.e., symmetric around its center).'''
+def isSymmetricR(root):
+    if not root: return True
+    def sym(left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        if left.val == right.val:
+            return sym(left.left,right.right) and\
+                   sym(left.right,right.left)
+        else:
+            return False
+    return sym(root.left, root.right)
+
+# non recursive
+def isSymmetric(root):
+    if not root: return True
+
+    ls = [[root.left, root.right]]
+
+    while len(ls) > 0:
+        left, right = ls.pop(0)
+        if not left and not right:
+            continue
+        if not left or not right:
+            return False
+        if left.val == right.val:
+            ls.insert(0, [left.left,right.right])
+            ls.insert(0, [left.right, right.left])
+        else:
+            return False
+    return True
+
 if __name__ == '__main__':
     from tree_test import *
+    import time
     random.seed(42)
 
     # root = to_binary_tree([3,9,20,None,None,15,7])
@@ -88,6 +113,18 @@ if __name__ == '__main__':
     # viz_tree_gpz(root)
     # print(isValidBST(root))
 
-    root = to_binary_tree([2147483647])
-    viz_tree_gpz(root)
-    print(isValidBST(root))
+    # root = to_binary_tree([2147483647])
+    # viz_tree_gpz(root)
+    # print(isValidBST(root))
+    root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
+    # root = to_binary_tree([1,2,2,3,4,4,3])
+    # root = to_binary_tree([1,2,2,None,3,None,3])
+    # print(isSymmetric(root))
+    start = time.time()
+    isSymmetric(root)
+    end = time.time()
+    print(f'non rec {end - start}')
+    start = time.time()
+    isSymmetricR(root)
+    end = time.time()
+    print(f'rec {end - start}')

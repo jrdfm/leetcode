@@ -59,22 +59,39 @@ def level_order_traversal(root):
   if root is None: 
     return 
   q = [] 
-  d = {}
   q.append(root) 
  
   while (len(q)) > 0: 
+    l = [i.val for i in q]
+    print(f'q:{l}')
     print(q[0].val, end=" ") 
     node = q.pop(0) 
     if node.left is not None: 
       q.append(node.left) 
-    
     if node.right is not None: 
       q.append(node.right) 
 
 
+def level_order_traversal(root): 
+  if root is None: 
+    return True
+  q = [] 
+  l = []
+  q.append(root) 
+  while (len(q)) > 0: 
 
-
-
+    # l = [i.val for i in q]
+    # print(f'q:{l}')
+    # print(q[0].val, end=" ") 
+    node = q.pop(0) 
+    if node.left is not None: 
+      q.append(node.left) 
+      l.append(node.left.val)
+    if node.right is not None: 
+      q.append(node.right) 
+      l.append(node.right.val)
+    # print(l)
+  return l
 
 
 def viz_tree_gpz(root): 
@@ -102,14 +119,36 @@ def viz_tree_gpz(root):
   dot.render('test', view=True) 
 
 
+    
 
 # Driver Code 
 if __name__ == '__main__': 
   random.seed(42)
-  arr = [1, 2, 3, 4, 5, -1, 6, -1, -1, 7, 8] 
-  root = to_binary_tree(arr) 
-  level_order_traversal(root) 
+  # arr = [1, 2, 3, 4, 5, -1, 6, -1, -1, 7, 8] 
+  # root = to_binary_tree(arr) 
+  # level_order_traversal(root) 
 #   viz_tree_gpz(root)
 
-  root = to_binary_tree([3,9,20,None,None,15,7])
+  # root = to_binary_tree([3,9,20,None,None,15,7])
+  # viz_tree_gpz(root)
+  def test(lst):
+      j  = 1
+      i = 0
+      while i + 2*j < len(lst):
+            print(f'i:{i}, j:{j}')
+            l = lst[i:(i:=i+j)]
+            r = lst[i:(i:=i+j)]
+            if l == r[::-1]: 
+              pass 
+            else: 
+              return False
+            j *= 2
+      return True   
+                
+
+  root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
+  # root = to_binary_tree([1,2,2,None,3,None,3])
+  ls = level_order_traversal(root)
+  print(f'')
   viz_tree_gpz(root)
+  print(test(ls))
