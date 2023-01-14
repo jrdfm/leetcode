@@ -40,4 +40,4 @@ leetcode practice
 - [x] Validate Binary Search Tree
 - [x] Symmetric Tree
 - [x] Binary Tree Level Order Traversal
-- [] Convert Sorted Array to Binary Search Tree
+- [x] Convert Sorted Array to Binary Search Tree
