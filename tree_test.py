@@ -76,21 +76,22 @@ def level_order_traversal(root):
   if root is None: 
     return True
   q = [] 
-  l = []
+  l = [[root.val]]
   q.append(root) 
   while (len(q)) > 0: 
-
-    # l = [i.val for i in q]
+    ls = []
+    l = [i.val for i in q]
     # print(f'q:{l}')
     # print(q[0].val, end=" ") 
     node = q.pop(0) 
     if node.left is not None: 
-      q.append(node.left) 
-      l.append(node.left.val)
+      q.append(ll :=node.left) 
+      ls.append(ll.val)
     if node.right is not None: 
-      q.append(node.right) 
-      l.append(node.right.val)
-    # print(l)
+      q.append(rr:=node.right) 
+      ls.append(rr.val)
+    # print(f'{ll.val,rr.val}')
+    print(ls)
   return l
 
 
@@ -151,4 +152,4 @@ if __name__ == '__main__':
   ls = level_order_traversal(root)
   print(f'')
   viz_tree_gpz(root)
-  print(test(ls))
+  # print(test(ls))

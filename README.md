@@ -39,5 +39,5 @@ leetcode practice
 - [x] Maximum Depth of Binary Tree
 - [x] Validate Binary Search Tree
 - [x] Symmetric Tree
-- [] Binary Tree Level Order Traversal
+- [x] Binary Tree Level Order Traversal
 - [] Convert Sorted Array to Binary Search Tree

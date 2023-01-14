@@ -79,6 +79,15 @@ def isSymmetric(root):
             return False
     return True
 
+'''Given the root of a binary tree, return the level order traversal of its nodes' values.
+ (i.e., from left to right, level by level).'''
+def levelOrder(root):
+    res, level = [], [root]
+    while root and level:
+        res.append([node.val for node in level])         
+        level = [ch for node in level for ch in (node.left, node.right) if ch]
+    return res
+
 if __name__ == '__main__':
     from tree_test import *
     import time
@@ -116,15 +125,21 @@ if __name__ == '__main__':
     # root = to_binary_tree([2147483647])
     # viz_tree_gpz(root)
     # print(isValidBST(root))
-    root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
+    # root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
     # root = to_binary_tree([1,2,2,3,4,4,3])
     # root = to_binary_tree([1,2,2,None,3,None,3])
     # print(isSymmetric(root))
-    start = time.time()
-    isSymmetric(root)
-    end = time.time()
-    print(f'non rec {end - start}')
-    start = time.time()
-    isSymmetricR(root)
-    end = time.time()
-    print(f'rec {end - start}')
+    # start = time.time()
+    # isSymmetric(root)
+    # end = time.time()
+    # print(f'non rec {end - start}')
+    # start = time.time()
+    # isSymmetricR(root)
+    # end = time.time()
+    # print(f'rec {end - start}')
+    root = to_binary_tree([3,2,9,20,None,None,15,7])
+    root = to_binary_tree([1,2,2,3,4,4,3,5,6,7,8,8,7,6,5])
+    # root = to_binary_tree([1,2,3,4,None,None,5])
+    viz_tree_gpz(root)
+    print(levelOrder(root))
+    # print(levelOrder(root))
