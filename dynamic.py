@@ -1,5 +1,6 @@
 #!/usr/local/bin/python 
 import unittest
+
 class Test(unittest.TestCase):
     def test_climbStairs(self):
         self.assertEqual(climbStairs(2),2)
