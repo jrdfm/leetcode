@@ -46,3 +46,10 @@ leetcode practice
 
 - [x] Merge Sorted Array
 - [x] First Bad Version
+
+### [Dynamic Programming]()
+
+- [] Climbing Stairs
+- [] Best Time to Buy and Sell Stock
+- [] Maximum Subarray
+- [] House Robber 
