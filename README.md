@@ -42,7 +42,7 @@ leetcode practice
 - [x] Binary Tree Level Order Traversal
 - [x] Convert Sorted Array to Binary Search Tree
 
-### [Sorting and Searching]()
+### [Sorting and Searching](https://github.com/jrdfm/leetcode/blob/e76d480f3baec37c0310ae5c1c9f0c8bbed2a955/searchNsort.py)
 
-- [] Merge Sorted Array
-- [] First Bad Version
+- [x] Merge Sorted Array
+- [x] First Bad Version
