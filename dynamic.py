@@ -70,6 +70,11 @@ def maxSubArray_dq(nums):
                     
 '''Given an integer array nums representing the amount of money of each house,
    return the maximum amount of money you can rob tonight without alerting the police'''
+
+'''f(0) = nums[0]
+   f(1) = max(num[0], num[1])
+   f(k) = max( f(k-2) + nums[k], f(k-1) )'''
+   
 def rob(nums):
     cur = last = 0
     for i in nums:
