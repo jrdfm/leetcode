@@ -50,6 +50,6 @@ leetcode practice
 ### [Dynamic Programming](https://github.com/jrdfm/leetcode/blob/ec57b42bd9ba7094df490113b0d5ce8612dbadab/dynamic.py)
 
 - [x] Climbing Stairs
-- [] Best Time to Buy and Sell Stock
-- [] Maximum Subarray
+- [x] Best Time to Buy and Sell Stock
+- [x] Maximum Subarray
 - [] House Robber 
