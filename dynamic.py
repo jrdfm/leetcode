@@ -20,6 +20,12 @@ class Test(unittest.TestCase):
         self.assertEqual(maxSubArray_dq([-2,1,-3,4,-1,2,1,-5,4]), 6)
         self.assertEqual(maxSubArray_dq([5,4,-1,7,8]), 23)
         self.assertEqual(maxSubArray_dq([1]),1)
+
+    def test_rob(self):
+        self.assertEqual(rob([1,2,3,1]), 4)
+        self.assertEqual(rob([2,7,9,3,1]), 12)
+        self.assertEqual(rob([2,1,1,2]), 4)
+
 '''You are climbing a staircase. It takes n steps to reach the top.
    Each time you can either climb 1 or 2 steps. In how many distinct ways
    can you climb to the top?'''
@@ -62,6 +68,13 @@ def maxSubArray_dq(nums):
         return max(mcs(nums, l, c-1),mcs(nums, c+1, r), lhsum + nums[c] + rhsum)
     return mcs(nums,0,len(nums) - 1)
                     
+'''Given an integer array nums representing the amount of money of each house,
+   return the maximum amount of money you can rob tonight without alerting the police'''
+def rob(nums):
+    cur = last = 0
+    for i in nums:
+        last, cur = cur, max(last + i, cur)
+    return cur
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
