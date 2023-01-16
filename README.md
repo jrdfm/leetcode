@@ -53,3 +53,24 @@ leetcode practice
 - [x] Best Time to Buy and Sell Stock
 - [x] Maximum Subarray
 - [x] House Robber 
+
+### [Design]()
+
+- [] Shuffle an Array
+- [] Min Stack
+
+### [Math]()
+
+- [] Fizz Buzz
+- [] Count Primes
+- [] Power of Three
+- [] Roman to Integer
+
+### [Others]()
+
+- [] Number of 1 Bits
+- [] Hamming Distance
+- [] Reverse Bits
+- [] Pascal's Triangle
+- [] Valid Parentheses
+- [] Missing Number
