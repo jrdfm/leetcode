@@ -47,9 +47,9 @@ leetcode practice
 - [x] Merge Sorted Array
 - [x] First Bad Version
 
-### [Dynamic Programming]()
+### [Dynamic Programming](https://github.com/jrdfm/leetcode/blob/ec57b42bd9ba7094df490113b0d5ce8612dbadab/dynamic.py)
 
-- [] Climbing Stairs
+- [x] Climbing Stairs
 - [] Best Time to Buy and Sell Stock
 - [] Maximum Subarray
 - [] House Robber 

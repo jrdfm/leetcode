@@ -1,7 +1,7 @@
 #!/usr/local/bin/python 
 import unittest
 
-class TestAddNums(unittest.TestCase):
+class TestMerge(unittest.TestCase):
     def test_merge(self):
         nums1 = [1,2,3,0,0,0]
         nums2 = [2,5,6]
