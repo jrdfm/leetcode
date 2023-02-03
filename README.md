@@ -54,19 +54,19 @@ leetcode practice
 - [x] Maximum Subarray
 - [x] House Robber 
 
-### [Design]()
+### [Design](https://github.com/jrdfm/leetcode/blob/7b43d02796b2a864abfcc7a32ecce366c848bf7c/design.py)
 
 - [] Shuffle an Array
 - [] Min Stack
 
-### [Math]()
+### [Math](https://github.com/jrdfm/leetcode/blob/7b43d02796b2a864abfcc7a32ecce366c848bf7c/math_.py)
 
 - [] Fizz Buzz
 - [] Count Primes
 - [] Power of Three
 - [] Roman to Integer
 
-### [Others]()
+### [Others](https://github.com/jrdfm/leetcode/blob/7b43d02796b2a864abfcc7a32ecce366c848bf7c/others.py)
 
 - [] Number of 1 Bits
 - [] Hamming Distance
